@@ -1,1 +1,3 @@
-x
+# Benchmark
+
+Multimodal affective signals are inherently heterogeneous, and real-world applications frequently encounter both cross-modal conflicts and modality missingness.  However, most existing multimodal sentiment datasets only provide a unified multimodal annotation for each multimodal segment and mainly assume full-modality input, making it difficult to systematically investigate conflict and missingness scenarios.To fill this gap, we introduce the multimodal emotion recognition benchmark, which provides both unimodal and multimodal emotion annotations, and supports evaluation under both full-modality and missing-modality inputs.
