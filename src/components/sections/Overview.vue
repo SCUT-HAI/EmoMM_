@@ -1,5 +1,5 @@
 <script setup>
-import abstract from '../mds/Overview.mdx';
+import abstract from '../mds/Overview.md';
 </script>
 
 <template>
