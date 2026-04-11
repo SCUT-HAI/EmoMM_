@@ -25,7 +25,7 @@ const btn_color = '#444444'
 const authors = [
   {
     name: "Yueru Sun",
-    icon: "./icon/syr.png",
+    icon: "./icon/syr.jpg",
     homepage: "",
     address_flag: "1,2,#"
   },
