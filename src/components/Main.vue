@@ -5,7 +5,6 @@ import Markdown from './sections/Markdown.vue'
 import BibTeX from './sections/BibTeX.vue'
 import Overview from './sections/Overview.vue'
 import Benchmark from './sections/Benchmark.vue'
-import Markdown from './sections/Markdown.vue'
 
 export default {
   components: {
@@ -14,7 +13,6 @@ export default {
     BibTeX,
     Overview,
     Benchmark,
-    Markdown
   }
 }
 </script>
@@ -22,7 +20,6 @@ export default {
 <template>
   <Title/>
   <Abstract/>
-  <Markdown/>
   <Overview/>
   <Benchmark/>
   <BibTeX/>
