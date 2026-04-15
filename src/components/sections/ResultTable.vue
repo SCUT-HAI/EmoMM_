@@ -1,6 +1,6 @@
 <template>
   <div class="result-table-wrapper">
-    <h2 class="section-title">Experimental Results</h2>
+    <h2>Experimental Results</h2>
 
     <div class="table-scroll">
       <table class="result-table">
@@ -103,14 +103,8 @@
   overflow-x: hidden;
 }
 
-.section-title {
-  margin: 0 0 18px 0;
+.result-table-wrapper h2 {
   text-align: center;
-  font-size: 3rem;
-  font-weight: 700;
-  font-style: italic;
-  line-height: 1.2;
-  letter-spacing: 0.5px;
 }
 
 .table-scroll {
