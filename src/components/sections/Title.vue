@@ -94,7 +94,7 @@ const con_and_corresponding_author =
   "#: Equal Contribution. *: Corresponding Author."
 
 // 最新消息
-const news = "🔥 [2024-12-15] This template project is still under development."
+const news = "🔍 Feel free to contact us if you have any questions."
 
 // 强调内容
 const emphases = [
