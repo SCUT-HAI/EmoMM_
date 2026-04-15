@@ -7,7 +7,7 @@ import ResultTable from './ResultTable.vue'
     <el-divider />
 
     <el-row justify="center">
-      <el-col :xs="24" :sm="20" :md="16" :lg="16" :xl="16">
+      <el-col :xs="24" :sm="20" :md="16" :lg="12" :xl="12">
         <ResultTable />
       </el-col>
     </el-row>
