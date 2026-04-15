@@ -3,11 +3,11 @@ export default {
   data() {
     return {
       bibtex: [
-        @inproceedings{sun2026emomm,
+       ' @inproceedings{sun2026emomm,
             title={Benchmarking and Steering MLLM for Multimodal Emotion Recognition under Conflict and Missingness},
             author={Sun, Yueru and Zhang, Yimeng and Gu, Haoyu and Chen, Nuo and She, Dong and Yao, Xianrong and Gao, Yang and Jin, Zhanpeng},
             booktitle={Findings of the Association for Computational Linguistics: ACL 2026},
-            year={2026}
+            year={2026}'
         },
       ],
     }
