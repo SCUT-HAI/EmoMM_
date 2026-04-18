@@ -1,9 +1,6 @@
 <script setup>
 const tableRows = [
-  {
-    type: 'group',
-    label: 'Open-source Baselines',
-  },
+  { type: 'group', label: 'Open-source Baselines' },
   {
     type: 'data',
     model: 'Video-LLaMA2.1-7B-AV',
@@ -28,10 +25,7 @@ const tableRows = [
     conflict: { acc: '41.25', f1: '37.70', mae: '0.367' },
     missing: { acc: '40.65', f1: '37.78', mae: '0.390' },
   },
-  {
-    type: 'group',
-    label: 'Target Backbones & Ours',
-  },
+  { type: 'group', label: 'Target Backbones & Ours' },
   {
     type: 'data',
     model: 'Qwen2.5-Omni-7B',
@@ -66,10 +60,7 @@ const tableRows = [
     conflict: { acc: '52.96', f1: '51.53', mae: '0.292', accBold: true, f1Bold: true, maeBold: true },
     missing: { acc: '48.34', f1: '47.12', mae: '0.293', f1Bold: true, maeBold: true },
   },
-  {
-    type: 'group',
-    label: 'Closed-source API',
-  },
+  { type: 'group', label: 'Closed-source API' },
   {
     type: 'data',
     model: 'Gemini 3 Pro',
@@ -89,12 +80,12 @@ const renderValue = (metric, key) => ({
 </script>
 
 <template>
-  <div class="result-page">
+  <div>
     <el-divider />
 
     <el-row justify="center">
-      <el-col :xs="24" :sm="22" :md="20" :lg="18" :xl="18">
-        <div class="section-title">Result</div>
+      <el-col :xs="24" :sm="20" :md="16" :lg="12" :xl="12">
+        <h1 class="result-title">Result</h1>
 
         <div class="table-outer">
           <div class="table-wrap">
@@ -157,19 +148,8 @@ const renderValue = (metric, key) => ({
 </template>
 
 <style scoped>
-.result-page {
-  width: 100%;
-}
-
-.section-title {
-  margin: 0 0 18px;
-  text-align: center;
-  font-size: 1.7rem;
-  font-weight: 600;
-  font-style: italic;
-  letter-spacing: 0.01em;
-  line-height: 1.2;
-  color: #111827;
+.result-title {
+  margin: 0 0 1.5rem;
 }
 
 .table-outer {
@@ -244,7 +224,7 @@ const renderValue = (metric, key) => ({
 }
 
 .data-row.highlight {
-  background: #eef6ff;
+  background: #eaf4ff;
 }
 
 .data-row.highlight .model-cell {
@@ -266,11 +246,6 @@ const renderValue = (metric, key) => ({
 }
 
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 1.45rem;
-    margin-bottom: 16px;
-  }
-
   .result-table {
     font-size: 14px;
   }
