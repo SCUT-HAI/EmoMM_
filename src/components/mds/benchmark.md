@@ -10,5 +10,5 @@ We analyze the label distributions of ground truth, text, audio, and video, and 
 
 ![Overview of the EmoMM benchmark](./EmoMM_statistics.png)
 
-*Figure 3. EmoMM statistics: five-class label distributions (left) and cross-modal agreement coefficients $C_{ij}$ (right), where larger $C_{ij}$ values indicate stronger agreement.*
+*Figure 3. EmoMM statistics: five-class label distributions (left) and cross-modal agreement coefficients(right).*
 
