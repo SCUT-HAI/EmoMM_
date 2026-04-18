@@ -136,9 +136,8 @@ function barSegments(t, a, v) {
     <el-divider />
 
     <el-row justify="center">
-      <el-col :xs="24" :sm="22" :md="18" :lg="14" :xl="14">
-
-        <h2 class="section-title">Case Study</h2>
+      <el-col :xs="24" :sm="20" :md="16" :lg="12" :xl="12">
+        <h1 class="section-title">Case Study</h1>
         <p class="section-desc">
           Four representative samples showing attention budget reallocation before and after
           CHASE steering. All four cases flip from incorrect to correct prediction.
@@ -162,53 +161,55 @@ function barSegments(t, a, v) {
             :label="tabLabels[ci]"
             :name="String(ci)"
           >
-            <div class="case-meta">
-              <span :class="['combo-badge', comboBadgeClass[c.combo]]">{{ c.combo }}</span>
-              <span class="meta-text">{{ c.dataset }}</span>
-              <span class="meta-bucket">{{ c.bucket }}</span>
-              <span class="meta-text">η={{ c.eta }} &nbsp; τ={{ c.tau }} &nbsp; top-k={{ c.topk }}</span>
-            </div>
+            <div class="case-panel">
+              <div class="case-meta">
+                <span :class="['combo-badge', comboBadgeClass[c.combo]]">{{ c.combo }}</span>
+                <span class="meta-text">{{ c.dataset }}</span>
+                <span class="meta-bucket">{{ c.bucket }}</span>
+                <span class="meta-text">η={{ c.eta }} &nbsp; τ={{ c.tau }} &nbsp; top-k={{ c.topk }}</span>
+              </div>
 
-            <div class="sample-id">{{ c.id }}</div>
+              <div class="sample-id">{{ c.id }}</div>
 
-            <div class="pred-box">
-              <span class="pred-label">Prediction</span>
-              <span class="tag-wrong">baseline</span>
-              <span class="pred-wrong">{{ c.baseline }}</span>
-              <span class="pred-arrow">→</span>
-              <span class="tag-right">CHASE</span>
-              <span class="pred-right">{{ c.chase }}</span>
-              <span class="pred-gt">(GT: {{ c.gt }})</span>
-              <span class="pred-result">wrong → right ✓</span>
-            </div>
+              <div class="pred-box">
+                <span class="pred-label">Prediction</span>
+                <span class="tag-wrong">baseline</span>
+                <span class="pred-wrong">{{ c.baseline }}</span>
+                <span class="pred-arrow">→</span>
+                <span class="tag-right">CHASE</span>
+                <span class="pred-right">{{ c.chase }}</span>
+                <span class="pred-gt">(GT: {{ c.gt }})</span>
+                <span class="pred-result">wrong → right ✓</span>
+              </div>
 
-            <div class="bar-grid">
-              <div class="col-header"></div>
-              <div class="col-header">before steering</div>
-              <div class="col-header">after steering</div>
+              <div class="bar-grid-wrap">
+                <div class="bar-grid">
+                  <div class="col-header"></div>
+                  <div class="col-header">before steering</div>
+                  <div class="col-header">after steering</div>
 
-              <template v-for="row in c.layers" :key="row.l">
-                <div :class="['layer-label', { steered: row.s }]">
-                  L{{ row.l }}{{ row.s ? '*' : '' }}
+                  <template v-for="row in c.layers" :key="row.l">
+                    <div :class="['layer-label', { steered: row.s }]">
+                      L{{ row.l }}{{ row.s ? '*' : '' }}
+                    </div>
+
+                    <div class="bar-wrap" :title="barSegments(row.b[0], row.b[1], row.b[2]).tip">
+                      <div class="seg t-before" :style="{ width: (norm(row.b[0], row.b[1], row.b[2])[0] * 100).toFixed(2) + '%' }"></div>
+                      <div class="seg a-before" :style="{ width: (norm(row.b[0], row.b[1], row.b[2])[1] * 100).toFixed(2) + '%' }"></div>
+                      <div class="seg v-before" :style="{ width: (norm(row.b[0], row.b[1], row.b[2])[2] * 100).toFixed(2) + '%' }"></div>
+                    </div>
+
+                    <div class="bar-wrap" :title="barSegments(row.a[0], row.a[1], row.a[2]).tip">
+                      <div class="seg t-after" :style="{ width: (norm(row.a[0], row.a[1], row.a[2])[0] * 100).toFixed(2) + '%' }"></div>
+                      <div class="seg a-after" :style="{ width: (norm(row.a[0], row.a[1], row.a[2])[1] * 100).toFixed(2) + '%' }"></div>
+                      <div class="seg v-after" :style="{ width: (norm(row.a[0], row.a[1], row.a[2])[2] * 100).toFixed(2) + '%' }"></div>
+                    </div>
+                  </template>
                 </div>
-
-                <div class="bar-wrap" :title="barSegments(row.b[0], row.b[1], row.b[2]).tip">
-                  <div class="seg t-before" :style="{ width: (norm(row.b[0], row.b[1], row.b[2])[0] * 100).toFixed(2) + '%' }"></div>
-                  <div class="seg a-before" :style="{ width: (norm(row.b[0], row.b[1], row.b[2])[1] * 100).toFixed(2) + '%' }"></div>
-                  <div class="seg v-before" :style="{ width: (norm(row.b[0], row.b[1], row.b[2])[2] * 100).toFixed(2) + '%' }"></div>
-                </div>
-
-                <div class="bar-wrap" :title="barSegments(row.a[0], row.a[1], row.a[2]).tip">
-                  <div class="seg t-after" :style="{ width: (norm(row.a[0], row.a[1], row.a[2])[0] * 100).toFixed(2) + '%' }"></div>
-                  <div class="seg a-after" :style="{ width: (norm(row.a[0], row.a[1], row.a[2])[1] * 100).toFixed(2) + '%' }"></div>
-                  <div class="seg v-after" :style="{ width: (norm(row.a[0], row.a[1], row.a[2])[2] * 100).toFixed(2) + '%' }"></div>
-                </div>
-              </template>
+              </div>
             </div>
-
           </el-tab-pane>
         </el-tabs>
-
       </el-col>
     </el-row>
   </div>
@@ -216,22 +217,24 @@ function barSegments(t, a, v) {
 
 <style scoped>
 .section-title {
+  margin: 0 0 1rem;
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
   text-align: center;
 }
 
 .section-desc {
-  font-size: 0.9rem;
+  margin: 0 0 1.25rem;
+  font-size: 0.92rem;
   color: #606266;
   line-height: 1.7;
-  margin-bottom: 1.25rem;
   text-align: center;
 }
 
 .legend {
+  width: 100%;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
   align-items: center;
@@ -260,12 +263,35 @@ function barSegments(t, a, v) {
   flex-shrink: 0;
 }
 
+.case-tabs {
+  width: 100%;
+}
+
 .case-tabs :deep(.el-tabs__header) {
   margin-bottom: 16px;
 }
 
+.case-tabs :deep(.el-tabs__nav-wrap) {
+  justify-content: center;
+}
+
+.case-tabs :deep(.el-tabs__nav-scroll) {
+  display: flex;
+  justify-content: center;
+}
+
+.case-tabs :deep(.el-tabs__nav) {
+  margin: 0 auto;
+}
+
 .case-tabs :deep(.el-tabs__item) {
   font-size: 13px;
+}
+
+.case-panel {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .case-meta {
@@ -303,6 +329,7 @@ function barSegments(t, a, v) {
   color: #909399;
   margin-bottom: 10px;
   font-family: monospace;
+  overflow-wrap: anywhere;
 }
 
 .pred-box {
@@ -360,10 +387,17 @@ function barSegments(t, a, v) {
   border-radius: 4px;
 }
 
+.bar-grid-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
 .bar-grid {
+  width: 100%;
+  min-width: 0;
   display: grid;
-  grid-template-columns: 36px 1fr 1fr;
-  gap: 3px 10px;
+  grid-template-columns: 42px minmax(0, 1fr) minmax(0, 1fr);
+  gap: 4px 10px;
   align-items: center;
 }
 
@@ -387,6 +421,8 @@ function barSegments(t, a, v) {
 }
 
 .bar-wrap {
+  width: 100%;
+  min-width: 0;
   height: 13px;
   display: flex;
   border-radius: 3px;
@@ -401,4 +437,23 @@ function barSegments(t, a, v) {
 .t-after  { background: #378ADD; }
 .a-after  { background: #1D9E75; }
 .v-after  { background: #BA7517; }
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.35rem;
+  }
+
+  .section-desc {
+    font-size: 0.86rem;
+  }
+
+  .pred-result {
+    margin-left: 0;
+  }
+
+  .bar-grid {
+    grid-template-columns: 38px minmax(0, 1fr) minmax(0, 1fr);
+    gap: 4px 8px;
+  }
+}
 </style>
