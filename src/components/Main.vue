@@ -6,7 +6,7 @@ import BibTeX from './sections/BibTeX.vue'
 import Overview from './sections/Overview.vue'
 import Benchmark from './sections/Benchmark.vue'
 import Result from './sections/Result.vue'
-import CaseStudy from './components/sections/CaseStudy.vue'
+import CaseStudy from './sections/CaseStudy.vue'
 
 export default {
   components: {
