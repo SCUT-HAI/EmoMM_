@@ -103,10 +103,10 @@ const CASES = [
 ]
 
 const tabLabels = [
-  '① TAV · CMU-MOSI',
-  '② TV · CH-SIMSv2',
-  '③ AV · CMU-MOSI',
-  '④ TA · CMU-MOSI',
+  '① TAV ',
+  '② TV ',
+  '③ AV ',
+  '④ TA ',
 ]
 
 const comboBadgeClass = {
