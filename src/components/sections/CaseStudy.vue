@@ -158,7 +158,6 @@ function barSegments(t, a, v) {
                 <span :class="['combo-badge', comboBadgeClass[c.combo]]">{{ c.combo }}</span>
                 <span class="meta-text">{{ c.dataset }}</span>
                 <span class="meta-bucket">{{ c.bucket }}</span>
-                <span class="meta-text">η={{ c.eta }} &nbsp; τ={{ c.tau }} &nbsp; top-k={{ c.topk }}</span>
               </div>
 
               <div class="sample-id">{{ c.id }}</div>
