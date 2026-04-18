@@ -6,6 +6,7 @@ import BibTeX from './sections/BibTeX.vue'
 import Overview from './sections/Overview.vue'
 import Benchmark from './sections/Benchmark.vue'
 import Result from './sections/Result.vue'
+import CaseStudy from './components/sections/CaseStudy.vue'
 
 export default {
   components: {
@@ -15,6 +16,7 @@ export default {
     Overview,
     Result,
     Benchmark,
+    CaseStudy,
   }
 }
 </script>
@@ -25,5 +27,6 @@ export default {
   <Overview/>
   <Benchmark/>
   <Result/>
+  <CaseStudy/>
   <BibTeX/>
 </template>
